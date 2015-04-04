@@ -17,12 +17,11 @@ def string_to_list(instring):
 
 
 def get_smallest_multiple(i):
-    bot_limit, multiple = i
-    while True and bot_limit != multiple:
-        multiple += multiple
-        if multiple >= bot_limit:
-            return multiple
-    return multiple  # returns if multiple == bot_limit
+    bot_limit, cur_multiple = i
+    while True:
+        if cur_multiple >= bot_limit:
+            return cur_multiple
+        cur_multiple += i[1]  # adds original multiple
 
 
 def main():
