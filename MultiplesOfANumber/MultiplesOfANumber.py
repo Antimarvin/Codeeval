@@ -18,10 +18,11 @@ def string_to_list(instring):
 
 def get_smallest_multiple(i):
     bot_limit, multiple = i
-    while True:
+    while True and bot_limit != multiple:
         multiple += multiple
         if multiple >= bot_limit:
             return multiple
+    return multiple  # returns if multiple == bot_limit
 
 
 def main():
@@ -44,5 +45,6 @@ if __name__ == '__main__':
     """
     assert get_smallest_multiple([13, 8]) == 16, "Failed 13,8"
     assert get_smallest_multiple([17, 16]) == 32, "Failed 18,16"
+    assert get_smallest_multiple([14, 14]) == 14, "Failed same value"
 
     main()
