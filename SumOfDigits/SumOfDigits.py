@@ -32,5 +32,5 @@ if __name__ == '__main__':
     Runs only if file is run directly and contains self evaluating asserts
     """
     assert sumOfDigits('3058') == 16, "Failed 3058"
-    assert sumOfDigits('125') == 8, "Failed 125" #FIXME
+    assert sumOfDigits('125') == 8, "Failed 125"
     main()
