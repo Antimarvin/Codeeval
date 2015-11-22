@@ -9,12 +9,12 @@ def read_file_to_list(filename):
     return content
 
 
-def sumOfDigits(number):
-    total = 0
-    for char in str(number):
-        total += int(char)
-    return total
-
+def fib(number):
+    if number == 0:
+        return 0
+    if number == 1:
+        return 1
+    return fib(number-1)+fib(number-2)
 
 def main():
     """
@@ -25,12 +25,14 @@ def main():
     inputs = [line for line in read_file_to_list(filename)]
     for i in inputs:
         cleanedi = i.rstrip('\n')
-        print sumOfDigits(cleanedi)
+        print fib(int(cleanedi))
 
 if __name__ == '__main__':
     """
     Runs only if file is run directly and contains self evaluating asserts
     """
-    assert sumOfDigits('3058') == 16, "Failed 3058"
-    assert sumOfDigits('125') == 8, "Failed 125" #FIXME
+    assert fib(0) == 0, "Failed 0"
+    assert fib(1) == 1, "Failed 1"
+    assert fib(5) == 5, "Failed 5"
+    assert fib(12) == 144, "Failed 12"
     main()
