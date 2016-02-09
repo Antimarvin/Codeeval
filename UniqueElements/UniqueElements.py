@@ -21,7 +21,7 @@ def main():
     data = read_file_to_list(filename)
 
     for row in data:
-        print(UniqueElements(row))
+        print(UniqueElements(row.rstrip()))
 
 
 if __name__ == '__main__':
