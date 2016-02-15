@@ -7,22 +7,14 @@ def read_file_to_list(filename):
     return content
 
 
-def BeautifulStrings(data):
-    data =data.upper()
-    data = ''.join(c for c in data if c.isalpha())
-    print(data)
-    keys = set(data)
-    values = []
-    beautynum = 26
-    total = 0
-    for k in keys:
-        values.append([k,data.count(k)])
-    values.sort(key=lambda letter: letter[1], reverse=True)
-    for v in values:
-        total += v[1] * beautynum
-        beautynum -= 1
-    print(values)
-    return total
+def is_armstrong(data):
+    armstrong_total = 0
+    for d in data:
+        armstrong_total += int(d) ** len(data)
+    if int(data) == armstrong_total:
+        return True
+    else:
+        return False
 
 
 def main():
@@ -35,7 +27,7 @@ def main():
 
     for row in data:
         if not row.isspace():
-            print(BeautifulStrings(row.rstrip()))
+            print(is_armstrong(row.rstrip()))
 
 
 if __name__ == '__main__':
